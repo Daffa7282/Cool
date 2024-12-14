@@ -254,9 +254,20 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
    keyrelease(keys["lshift"])
   end
 
-  if msg:lower():sub(1,14) == "-move leftward" then
-   keyrelease(keys["d"])
-   keypress(keys["a"])
+  if msg:lower():sub(1,14) == ".say" then
+   local tosay
+			
+			if args[1] == "say" then
+				tosay = string.sub(msg, 6)
+			else
+				tosay = string.sub(msg, 8)
+			end
+			
+			local speakerplayer = game.Players:FindFirstChild(speaker)
+			
+			if not speakerplayer then return end
+			
+			if altctrl then chat(tosay) else chat(speakerplayer.DisplayName .. ": " .. tosay) end
   end
 
   if msg:lower():sub(1,15) == "-move rightward" then
